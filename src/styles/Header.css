@@ -165,6 +165,66 @@
 .nav-mobile a:last-child {
     border-bottom: none;
 }
+/* Agrega al final del archivo Header.css */
+
+/* Botón Panel Admin */
+.admin-panel-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+    margin-right: 10px;
+}
+
+.admin-panel-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+/* Versión móvil del botón */
+.admin-panel-btn.mobile {
+    width: 100%;
+    justify-content: center;
+    margin: 10px 0;
+    padding: 12px 20px;
+}
+
+/* Ajustes para el user-menu con el botón admin */
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-greeting {
+    color: #333;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .user-menu {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .admin-panel-btn {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+}
 
 /* Responsividad */
 @media (min-width: 768px) {

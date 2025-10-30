@@ -1,4 +1,3 @@
-// components/common/Header.jsx
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../../hooks/useCart.js';
@@ -8,7 +7,7 @@ import '../../styles/Header.css';
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { getCartItemsCount } = useCart();
-    const { user, logout } = useAuth();
+    const { user, logout, isAdmin } = useAuth();
 
     // Manejo seguro del contador
     const cartItemsCount = getCartItemsCount ? getCartItemsCount() : 0;
@@ -20,10 +19,10 @@ const Header = () => {
 
     // Función para mostrar nombre completo o solo nombre si no hay apellido
     const getUserDisplayName = () => {
-        if (user.lastName) {
+        if (user?.lastName) {
             return `${user.name} ${user.lastName}`;
         }
-        return user.name;
+        return user?.name;
     };
 
     return (
@@ -55,6 +54,14 @@ const Header = () => {
                     {user ? (
                         <div className="user-menu">
                             <span className="user-greeting">Hola, {getUserDisplayName()}</span>
+                            
+                            {/* BOTÓN PANEL ADMIN - Solo visible para admins */}
+                            {isAdmin && (
+                                <Link to="/admin" className="admin-panel-btn">
+                                    🛠️ Panel Admin
+                                </Link>
+                            )}
+                            
                             <button onClick={handleLogout} className="logout-btn">
                                 Cerrar Sesión
                             </button>
@@ -77,9 +84,22 @@ const Header = () => {
                     <Link to="/products" onClick={() => setIsMenuOpen(false)}>Productos</Link>
                     <Link to="/categories" onClick={() => setIsMenuOpen(false)}>Categorías</Link>
                     <Link to="/about" onClick={() => setIsMenuOpen(false)}>Nosotros</Link>
+                    
                     {user ? (
                         <>
                             <span className="user-info">Hola, {getUserDisplayName()}</span>
+                            
+                            {/* BOTÓN PANEL ADMIN MÓVIL - Solo visible para admins */}
+                            {isAdmin && (
+                                <Link 
+                                    to="/admin" 
+                                    className="admin-panel-btn mobile"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    🛠️ Panel Admin
+                                </Link>
+                            )}
+                            
                             <button onClick={handleLogout} className="logout-btn">
                                 Cerrar Sesión
                             </button>
