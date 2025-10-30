@@ -1,25 +1,29 @@
-// components/common/Footer.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
+import { CiFacebook } from "react-icons/ci";
+import { CiInstagram } from "react-icons/ci";
+import { CiTwitter } from "react-icons/ci";
+import { MdOutlineEmail } from "react-icons/md";
+import { CiPhone } from "react-icons/ci";
+import { CiLocationOn } from "react-icons/ci";
+import { FaRegCopyright } from "react-icons/fa";
 
 const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer-container">
                 <div className="footer-sections">
-                    {/* Logo y descripción */}
                     <div className="footer-section">
-                        <h3>Ecommerce</h3>
+                        <h3>Crea Recuerdos</h3>
                         <p>Tu tienda online de confianza con los mejores productos y precios competitivos.</p>
                         <div className="social-links">
-                            <a href="#" aria-label="Facebook">📘</a>
-                            <a href="#" aria-label="Instagram">📷</a>
-                            <a href="#" aria-label="Twitter">🐦</a>
+                            <a href="#" aria-label="Facebook"><CiFacebook /></a>
+                            <a href="#" aria-label="Instagram"><CiInstagram /></a>
+                            <a href="#" aria-label="Twitter"><CiTwitter /></a>
                         </div>
                     </div>
 
-                    {/* Enlaces rápidos */}
                     <div className="footer-section">
                         <h4>Enlaces Rápidos</h4>
                         <ul>
@@ -30,7 +34,6 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Categorías */}
                     <div className="footer-section">
                         <h4>Categorías</h4>
                         <ul>
@@ -41,19 +44,18 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Contacto */}
                     <div className="footer-section">
                         <h4>Contacto</h4>
                         <ul>
-                            <li>📧 info@ecommerce.com</li>
-                            <li>📞 +1 (555) 123-4567</li>
-                            <li>📍 123 Calle Principal, Ciudad</li>
+                            <li><MdOutlineEmail /> info@ecommerce.com</li>
+                            <li> <CiPhone />+1 (555) 123-4567</li>
+                            <li> <CiLocationOn />123 Calle Principal, Ciudad</li>
                         </ul>
                     </div>
                 </div>
 
                 <div className="footer-bottom">
-                    <p>&copy; 2024 Ecommerce. Todos los derechos reservados.</p>
+                    <p> <FaRegCopyright />2025 Crea Recuerdos.Todos los derechos reservados.</p>
                     <div className="footer-links">
                         <Link to="/privacy">Privacidad</Link>
                         <Link to="/terms">Términos</Link>

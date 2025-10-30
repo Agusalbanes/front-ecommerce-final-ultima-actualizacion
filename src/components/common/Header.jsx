@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useCart } from '../../hooks/useCart.js';
 import { useAuth } from '../../hooks/useAuth.js';
 import '../../styles/Header.css';
+import { FaCartShopping } from "react-icons/fa6";
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,13 +31,13 @@ const Header = () => {
             <div className="header-container">
                 {/* Logo */}
                 <Link to="/" className="logo">
-                    <h1>Ecommerce</h1>
+                    <h1>Crea Recuerdos</h1>
                 </Link>
 
                 {/* Navegación Desktop */}
                 <nav className="nav-desktop">
                     <Link to="/products">Productos</Link>
-                    <Link to="/categories">Categorías</Link>
+                   {/*  <Link to="/categories">Categorías</Link> */}
                     <Link to="/about">Nosotros</Link>
                 </nav>
 
@@ -44,7 +45,7 @@ const Header = () => {
                 <div className="header-actions">
                     {/* Carrito con contador */}
                     <Link to="/cart" className="cart-icon">
-                        🛒
+                        <FaCartShopping />
                         {cartItemsCount > 0 && (
                             <span className="cart-count">{cartItemsCount}</span>
                         )}
@@ -58,7 +59,7 @@ const Header = () => {
                             {/* BOTÓN PANEL ADMIN - Solo visible para admins */}
                             {isAdmin && (
                                 <Link to="/admin" className="admin-panel-btn">
-                                    🛠️ Panel Admin
+                                    Panel Admin
                                 </Link>
                             )}
                             
@@ -82,7 +83,7 @@ const Header = () => {
                 {/* Menú móvil */}
                 <div className={`nav-mobile ${isMenuOpen ? 'active' : ''}`}>
                     <Link to="/products" onClick={() => setIsMenuOpen(false)}>Productos</Link>
-                    <Link to="/categories" onClick={() => setIsMenuOpen(false)}>Categorías</Link>
+                    {/* <Link to="/categories" onClick={() => setIsMenuOpen(false)}>Categorías</Link> */}
                     <Link to="/about" onClick={() => setIsMenuOpen(false)}>Nosotros</Link>
                     
                     {user ? (
