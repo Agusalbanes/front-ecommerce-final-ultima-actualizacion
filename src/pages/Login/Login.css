@@ -1,0 +1,304 @@
+/* pages/Login/Login.css */
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: var(--space-xl) var(--space-md);
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-card {
+    background: var(--surface);
+    padding: var(--space-xl);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.auth-card h1 {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+    color: var(--text);
+    font-size: 1.75rem;
+}
+
+.error-message {
+    background: #fee2e2;
+    color: #dc2626;
+    padding: var(--space-md);
+    border-radius: 8px;
+    margin-bottom: var(--space-lg);
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+}
+
+.auth-form input {
+    padding: var(--space-md);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.auth-button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: var(--space-md);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: var(--space-sm);
+}
+
+.auth-button:hover:not(:disabled) {
+    background: var(--primary-dark);
+}
+
+.auth-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: var(--space-lg);
+    color: var(--text-light);
+}
+
+.switch-button {
+    background: none;
+    border: none;
+    color: var(--primary);
+    cursor: pointer;
+    font-weight: 600;
+    margin-left: var(--space-xs);
+    text-decoration: underline;
+}
+
+.switch-button:hover {
+    color: var(--primary-dark);
+}
+
+/* pages/Login/Login.css - agregar estas clases */
+.success-message {
+    background: #d1fae5;
+    color: #065f46;
+    padding: var(--space-md);
+    border-radius: 8px;
+    margin-bottom: var(--space-lg);
+    text-align: center;
+    font-size: 0.875rem;
+    border: 1px solid #a7f3d0;
+}
+
+.error-message {
+    background: #fee2e2;
+    color: #dc2626;
+    padding: var(--space-md);
+    border-radius: 8px;
+    margin-bottom: var(--space-lg);
+    text-align: center;
+    font-size: 0.875rem;
+    border: 1px solid #fecaca;
+}
+
+/* pages/Login/Login.css */
+.message {
+    padding: var(--space-md);
+    border-radius: 8px;
+    margin-bottom: var(--space-lg);
+    text-align: center;
+    font-size: 0.875rem;
+    border: 1px solid;
+}
+
+.success-message {
+    background: #d1fae5;
+    color: #065f46;
+    border-color: #a7f3d0;
+}
+
+.error-message {
+    background: #fee2e2;
+    color: #dc2626;
+    border-color: #fecaca;
+}
+
+/* Mantener los estilos existentes */
+.form-group {
+    margin-bottom: var(--space-md);
+    position: relative;
+}
+
+.form-group input.error {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+}
+
+.field-error {
+    color: #ef4444;
+    font-size: 0.75rem;
+    margin-top: 4px;
+    display: block;
+}
+
+.auth-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: var(--space-xl) var(--space-md);
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-card {
+    background: var(--surface);
+    padding: var(--space-xl);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.auth-card h1 {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+    color: var(--text);
+    font-size: 1.75rem;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.auth-form input {
+    padding: var(--space-md);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.auth-button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: var(--space-md);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: var(--space-sm);
+}
+
+.auth-button:hover:not(:disabled) {
+    background: var(--primary-dark);
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: var(--space-lg);
+    color: var(--text-light);
+}
+
+.switch-button {
+    background: none;
+    border: none;
+    color: var(--primary);
+    cursor: pointer;
+    font-weight: 600;
+    margin-left: var(--space-xs);
+    text-decoration: underline;
+}
+
+.switch-button:hover {
+    color: var(--primary-dark);
+}
+
+/* pages/Login/Login.css - agregar estas clases */
+.auth-button.disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.auth-button.disabled:hover {
+    background-color: #9ca3af;
+    transform: none;
+}
+
+.switch-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    text-decoration: none;
+}
+
+/* Estilos para campos deshabilitados */
+.auth-form input:disabled {
+    background-color: #f9fafb;
+    color: #6b7280;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Responsividad Login */
+@media (min-width: 320px) {
+    .auth-card {
+        padding: var(--space-lg);
+        margin: 0 var(--space-sm);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 768px) {
+    .auth-card {
+        padding: var(--space-xl);
+        margin: 0;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr 1fr;
+    }
+}

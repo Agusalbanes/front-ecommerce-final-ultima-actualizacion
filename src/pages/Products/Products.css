@@ -1,0 +1,127 @@
+/* pages/Products/Products.css */
+.products-page {
+    padding: var(--space-md) 0;
+}
+
+.products-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.products-header h1 {
+    font-size: 2.5rem;
+    color: var(--text);
+    margin-bottom: var(--space-sm);
+}
+
+.products-header p {
+    color: var(--text-light);
+    font-size: 1.125rem;
+}
+
+.products-container {
+    display: grid;
+    gap: var(--space-lg);
+}
+
+/* Filtros */
+.filters-sidebar {
+    background: var(--surface);
+    padding: var(--space-lg);
+    border-radius: 12px;
+    height: fit-content;
+}
+
+.filter-group {
+    margin-bottom: var(--space-lg);
+}
+
+.filter-group h3 {
+    margin-bottom: var(--space-sm);
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.filter-group select {
+    width: 100%;
+    padding: var(--space-md);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    font-size: 0.875rem;
+}
+
+/* Grid principal */
+.products-main {
+    width: 100%;
+}
+
+.products-grid {
+    display: grid;
+    gap: var(--space-lg);
+    grid-template-columns: 1fr;
+}
+
+.loading,
+.no-products {
+    text-align: center;
+    padding: var(--space-xl);
+    color: var(--text-light);
+    font-size: 1.125rem;
+}
+
+/* Responsividad Products */
+@media (min-width: 320px) {
+    .products-header h1 {
+        font-size: 2rem;
+    }
+
+    .filters-sidebar {
+        padding: var(--space-md);
+    }
+}
+
+@media (min-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .products-container {
+        grid-template-columns: 250px 1fr;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1440px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 2000px) {
+    .products-container {
+        grid-template-columns: 300px 1fr;
+        gap: var(--space-xl);
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-xl);
+    }
+
+    .products-header h1 {
+        font-size: 3rem;
+    }
+}

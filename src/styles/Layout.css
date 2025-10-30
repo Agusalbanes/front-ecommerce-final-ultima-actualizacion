@@ -1,0 +1,33 @@
+/* styles/Layout.css */
+.layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-md);
+}
+
+/* Responsividad */
+@media (min-width: 320px) {
+    .main-content {
+        padding: var(--space-sm);
+    }
+}
+
+@media (min-width: 768px) {
+    .main-content {
+        padding: var(--space-md);
+    }
+}
+
+@media (min-width: 1024px) {
+    .main-content {
+        padding: var(--space-lg);
+    }
+}
