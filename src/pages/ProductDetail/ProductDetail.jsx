@@ -1,4 +1,3 @@
-// pages/ProductDetail/ProductDetail.jsx
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useCart } from '../../hooks/useCart';
@@ -38,7 +37,6 @@ const ProductDetail = () => {
             for (let i = 0; i < quantity; i++) {
                 addToCart(product);
             }
-            // Opcional: mostrar notificación de éxito
             alert(`${quantity} ${product.name} agregado(s) al carrito`);
         }
     };
@@ -77,17 +75,16 @@ const ProductDetail = () => {
         );
     }
 
-    // Imágenes de ejemplo (en un caso real vendrían del producto)
+
     const productImages = [
         product.image,
-        product.image, // Segunda imagen igual por simplicidad
-        product.image  // Tercera imagen igual por simplicidad
+        product.image, 
+        product.image  
     ];
 
     return (
         <div className="product-detail">
             <div className="product-detail-container">
-                {/* Breadcrumb */}
                 <nav className="breadcrumb">
                     <button onClick={() => navigate('/')} className="breadcrumb-link">Inicio</button>
                     <span className="breadcrumb-separator">/</span>
@@ -157,7 +154,6 @@ const ProductDetail = () => {
                             </ul>
                         </div>
 
-                        {/* Selector de cantidad */}
                         <div className="quantity-selector">
                             <label htmlFor="quantity">Cantidad:</label>
                             <div className="quantity-controls">
@@ -178,7 +174,6 @@ const ProductDetail = () => {
                             </div>
                         </div>
 
-                        {/* Botones de acción */}
                         <div className="product-actions">
                             <button
                                 onClick={handleAddToCart}
@@ -194,7 +189,6 @@ const ProductDetail = () => {
                             </button>
                         </div>
 
-                        {/* Información adicional */}
                         <div className="product-meta">
                             <div className="meta-item">
                                 <strong>Categoría:</strong>

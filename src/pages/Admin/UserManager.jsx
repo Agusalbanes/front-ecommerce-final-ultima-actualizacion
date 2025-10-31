@@ -29,7 +29,7 @@ const UserManager = () => {
         try {
             await userService.updateUser(userId, { role: newRole });
             setMessage('✅ Rol actualizado exitosamente');
-            loadUsers(); // Recargar la lista
+            loadUsers(); 
         } catch (error) {
             setMessage('❌ Error actualizando rol');
             console.error('Error en handleRoleChange:', error);
@@ -49,7 +49,6 @@ const UserManager = () => {
         }
     };
 
-    // Filtrar usuarios basado en la búsqueda
     const filteredUsers = users.filter(user =>
         user.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
         user.email?.toLowerCase().includes(searchTerm.toLowerCase())
@@ -65,7 +64,6 @@ const UserManager = () => {
                 </div>
             )}
 
-            {/* Barra de búsqueda y estadísticas */}
             <div className="user-header">
                 <div className="search-bar">
                     <input
@@ -83,7 +81,6 @@ const UserManager = () => {
                 </div>
             </div>
 
-            {/* Tabla de usuarios */}
             <div className="users-table-container">
                 {loading ? (
                     <div className="loading">Cargando usuarios...</div>

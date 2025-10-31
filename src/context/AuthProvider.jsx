@@ -144,8 +144,6 @@ export const AuthProvider = ({ children }) => {
         isAdmin: isAdmin
     };
 
-    console.log('🎯 AuthProvider render - user:', user, 'loading:', loading);
-
     return (
         <AuthContext.Provider value={value}>
             {children}

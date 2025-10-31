@@ -1,6 +1,5 @@
 import { api } from '../config/api';
 
-// Configuración de endpoints de usuarios
 const API_CONFIG = {
     USER: {
         CREATE: '/user/create',
@@ -13,14 +12,12 @@ const API_CONFIG = {
 };
 
 export const userService = {
-    // Obtener todos los usuarios
     getUsers: async () => {
         try {
             console.log('📤 Obteniendo lista de usuarios...');
             const response = await api.get(API_CONFIG.USER.GET_ALL);
             console.log('✅ Usuarios cargados:', response.data);
-            
-            // Ajustar según la estructura real del backend
+    
             if (response.data && Array.isArray(response.data.data)) {
                 return response.data.data;
             } else if (Array.isArray(response.data)) {
@@ -34,7 +31,6 @@ export const userService = {
         }
     },
 
-    // Crear nuevo usuario
     createUser: async (userData) => {
         try {
             console.log('👤 Creando usuario:', userData);
@@ -47,7 +43,6 @@ export const userService = {
         }
     },
 
-    // Actualizar usuario
     updateUser: async (id, userData) => {
         try {
             console.log('✏️ Actualizando usuario:', id, userData);
@@ -61,7 +56,6 @@ export const userService = {
         }
     },
 
-    // Eliminar usuario
     deleteUser: async (id) => {
         try {
             console.log('🗑️ Eliminando usuario:', id);
@@ -75,7 +69,6 @@ export const userService = {
         }
     },
 
-    // Crear admin (si es necesario)
     createAdmin: async (adminData) => {
         try {
             console.log('👑 Creando administrador:', adminData);

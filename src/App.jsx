@@ -11,6 +11,7 @@ import AdminRoute from './components/admin/AdminRoute.jsx'
 import { AuthProvider } from './context/AuthProvider.jsx'
 import { CartProvider } from './context/CartProvider.jsx'
 import DebugAuth from './components/DebugAuth.jsx';
+import About from './pages/About/About.jsx';
 import './styles/global.css'
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
               <Route path="/product/:id" element={<ProductDetail />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/about" element={<About/>} />
               
               {/* Ruta de Admin protegida */}
               <Route 

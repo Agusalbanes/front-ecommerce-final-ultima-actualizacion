@@ -1,4 +1,3 @@
-// services/cartService.js
 import axios from 'axios';
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -7,7 +6,6 @@ const api = axios.create({
     baseURL: API_URL,
 });
 
-// RUTAS según cartRoute.js
 const CART_ROUTES = {
     GET_CART: '/cart',
     ADD_ITEM: '/cart/add',

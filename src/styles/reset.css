@@ -1,6 +1,3 @@
-/* styles/reset.css */
-
-/* Reset moderno y completo */
 *,
 *::before,
 *::after {
@@ -9,7 +6,6 @@
     padding: 0;
 }
 
-/* Remove default margin */
 body,
 h1,
 h2,
@@ -25,18 +21,15 @@ dd {
     margin: 0;
 }
 
-/* Remove list styles on ul, ol elements */
 ul,
 ol {
     list-style: none;
 }
 
-/* Set core root defaults */
 html:focus-within {
     scroll-behavior: smooth;
 }
 
-/* Set core body defaults */
 body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
@@ -45,12 +38,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* A elements that don't have a class get default styles */
 a:not([class]) {
     text-decoration-skip-ink: auto;
 }
 
-/* Make images easier to work with */
 img,
 picture,
 video,
@@ -61,7 +52,6 @@ svg {
     height: auto;
 }
 
-/* Inherit fonts for inputs and buttons */
 input,
 button,
 textarea,
@@ -72,7 +62,6 @@ select {
     outline: none;
 }
 
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
     html:focus-within {
         scroll-behavior: auto;
@@ -88,7 +77,6 @@ select {
     }
 }
 
-/* Remove default button styles */
 button {
     cursor: pointer;
     border: none;
@@ -96,31 +84,26 @@ button {
     padding: 0;
 }
 
-/* Remove default link styles */
 a {
     text-decoration: none;
     color: inherit;
 }
 
-/* Remove default table styles */
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
 
-/* Remove default fieldset styles */
 fieldset {
     border: none;
     padding: 0;
     margin: 0;
 }
 
-/* Remove default textarea resize */
 textarea {
     resize: none;
 }
 
-/* Remove number input spinners */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -131,31 +114,26 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
-/* Remove search input clear button */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
     -webkit-appearance: none;
 }
 
-/* Remove select default arrow in IE */
 select::-ms-expand {
     display: none;
 }
 
-/* Ensure consistent background */
 html,
 body {
     background-color: var(--background, #ffffff);
     color: var(--text, #1e293b);
 }
 
-/* Focus styles for accessibility */
 :focus-visible {
     outline: 2px solid var(--primary, #2563eb);
     outline-offset: 2px;
 }
 
-/* Remove default details marker */
 details>summary {
     list-style: none;
 }
@@ -164,7 +142,6 @@ details>summary::-webkit-details-marker {
     display: none;
 }
 
-/* Prevent text overflow */
 p,
 h1,
 h2,
@@ -175,7 +152,6 @@ h6 {
     overflow-wrap: break-word;
 }
 
-/* Reset form elements */
 input,
 textarea,
 select {
@@ -185,51 +161,42 @@ select {
     appearance: none;
 }
 
-/* Remove default progress bar styles */
 progress {
     vertical-align: baseline;
 }
 
-/* Correct the cursor style of increment and decrement buttons in Safari */
 ::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {
     height: auto;
 }
 
-/* Remove inner padding and border in Firefox */
 ::-moz-focus-inner {
     border-style: none;
     padding: 0;
 }
 
-/* Restore focus styles in Firefox */
 :-moz-focusring {
     outline: 1px dotted ButtonText;
 }
 
-/* Remove default meter styles */
 meter {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
 }
 
-/* Ensure hidden attribute works */
 [hidden] {
     display: none !important;
 }
 
-/* Reset iframe */
 iframe {
     border: 0;
 }
 
-/* Reset pre */
 pre {
     white-space: pre-wrap;
 }
 
-/* Reset code */
 code,
 kbd,
 samp {
@@ -237,12 +204,10 @@ samp {
     font-size: 1em;
 }
 
-/* Reset small */
 small {
     font-size: 80%;
 }
 
-/* Reset sub and sup */
 sub,
 sup {
     font-size: 75%;
@@ -259,91 +224,74 @@ sub {
     bottom: -0.25em;
 }
 
-/* Reset dialog */
 dialog {
     padding: 0;
     border: none;
     background: none;
 }
 
-/* Reset mark */
 mark {
     background-color: transparent;
     color: inherit;
 }
 
-/* Reset abbr */
 abbr[title] {
     text-decoration: none;
 }
 
-/* Reset ruby */
 ruby {
     ruby-align: center;
 }
 
-/* Reset bdi */
 bdi {
     unicode-bidi: isolate;
 }
 
-/* Reset output */
 output {
     display: inline;
 }
 
-/* Reset summary */
 summary {
     display: list-item;
     cursor: pointer;
 }
 
-/* Reset template */
 template {
     display: none;
 }
 
-/* Reset slot */
 slot {
     display: contents;
 }
 
-/* Reset canvas */
 canvas {
     display: inline-block;
 }
 
-/* Reset embed */
 embed {
     display: block;
 }
 
-/* Reset object */
 object {
     display: block;
 }
 
-/* Reset param */
 param {
     display: none;
 }
 
-/* Reset map */
 map {
     display: inline;
 }
 
-/* Reset area */
 area {
     display: none;
 }
 
-/* Reset track */
 track {
     display: none;
 }
 
-/* Reset source */
 source {
     display: none;
 }

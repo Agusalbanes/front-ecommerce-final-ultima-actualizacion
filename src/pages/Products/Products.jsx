@@ -1,4 +1,3 @@
-// pages/Products/Products.jsx
 import React, { useState, useEffect } from 'react';
 import ProductCard from '../../components/products/ProductCard';
 import { productService } from '../../services/productService';
@@ -60,7 +59,6 @@ const Products = () => {
             </div>
 
             <div className="products-container">
-                {/* Filtros */}
                 <aside className="filters-sidebar">
                     <div className="filter-group">
                         <h3>Categorías</h3>
@@ -101,7 +99,6 @@ const Products = () => {
                     </div>
                 </aside>
 
-                {/* Grid de productos */}
                 <main className="products-main">
                     <div className="products-grid">
                         {filteredProducts.map(product => (

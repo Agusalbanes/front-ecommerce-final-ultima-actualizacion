@@ -10,7 +10,6 @@ const ProductManager = () => {
   const [message, setMessage] = useState('');
   const [editingProduct, setEditingProduct] = useState(null);
   
-  // Estado para el formulario de producto - ACTUALIZADO según tu modelo
   const [productForm, setProductForm] = useState({
     name: '',
     description: '',
@@ -22,7 +21,6 @@ const ProductManager = () => {
     highlighted: false
   });
 
-  // Opciones de status según tu backend
   const statusOptions = ['AVAILABLE', 'NOT AVAILABLE', 'DISCONTINUED'];
 
   useEffect(() => {
@@ -78,10 +76,6 @@ const ProductManager = () => {
         highlighted: productForm.highlighted
       };
 
-      console.log('📦 Enviando datos:', productData);
-      console.log('🔧 Modo:', editingProduct ? 'EDITAR' : 'CREAR');
-      console.log('🔧 ID a editar:', editingProduct?._id);
-
       if (editingProduct) {
         console.log('🔄 Ejecutando updateProduct...');
         await productService.updateProduct(editingProduct._id, productData);
@@ -117,10 +111,7 @@ const ProductManager = () => {
   };
 
   const handleEdit = (product) => {
-    console.log('✏️ Editando producto:', product);
-    console.log('📋 ID del producto:', product._id);
-    console.log('📋 Categoría del producto:', product.category);
-    
+  
     setEditingProduct(product);
     setProductForm({
       name: product.name,
@@ -152,7 +143,6 @@ const ProductManager = () => {
     }
   };
 
-  // Función para obtener el nombre de la categoría
   const getCategoryName = (categoryId) => {
     const category = categories.find(cat => cat._id === categoryId);
     return category ? category.name : 'Sin categoría';
@@ -168,7 +158,6 @@ const ProductManager = () => {
         </div>
       )}
 
-      {/* Formulario de producto */}
       <form onSubmit={handleSubmit} className="product-form">
         <h3>{editingProduct ? 'Editar Producto' : 'Crear Nuevo Producto'}</h3>
         
@@ -300,7 +289,6 @@ const ProductManager = () => {
         </div>
       </form>
 
-      {/* Lista de productos */}
       <div className="products-list">
         <h3>Productos Existentes ({products.length})</h3>
         

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useAuth } from '../../hooks/useAuth';
 import CategoryManager from './CategoryManager';
 import ProductManager from './ProductManager';
-import UserManager from './UserManager'; // NUEVO
+import UserManager from './UserManager'; 
 import './AdminPanel.css';
 
 const AdminPanel = () => {
@@ -36,7 +36,7 @@ const AdminPanel = () => {
           📦 Gestionar Productos
         </button>
         <button 
-          className={activeTab === 'users' ? 'active' : ''} // NUEVO
+          className={activeTab === 'users' ? 'active' : ''} 
           onClick={() => setActiveTab('users')}
         >
           👥 Gestionar Usuarios
@@ -46,7 +46,7 @@ const AdminPanel = () => {
       <div className="admin-content">
         {activeTab === 'categories' && <CategoryManager />}
         {activeTab === 'products' && <ProductManager />}
-        {activeTab === 'users' && <UserManager />} {/* NUEVO */}
+        {activeTab === 'users' && <UserManager />} 
       </div>
     </div>
   );

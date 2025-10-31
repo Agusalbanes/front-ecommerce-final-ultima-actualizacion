@@ -1,4 +1,3 @@
-// context/CartProvider.jsx
 import React, { useReducer, useEffect } from 'react';
 import CartContext from './CartContext';
 
@@ -12,9 +11,8 @@ const loadCartFromStorage = () => {
         const savedCart = localStorage.getItem('cart');
         if (savedCart) {
             const parsed = JSON.parse(savedCart);
-            // Asegurarnos de que siempre tenga la estructura correcta
             return {
-                items: parsed.items || parsed || [] // Compatibilidad con versiones anteriores
+                items: parsed.items || parsed || [] 
             };
         }
         return initialState;
@@ -85,7 +83,7 @@ const cartReducer = (state, action) => {
         case 'LOAD_CART': {
             newState = {
                 ...state,
-                items: action.payload || [] // Asegurar que sea array
+                items: action.payload || [] 
             };
             break;
         }
@@ -107,7 +105,6 @@ const cartReducer = (state, action) => {
 export const CartProvider = ({ children }) => {
     const [state, dispatch] = useReducer(cartReducer, loadCartFromStorage());
 
-    // Cargar carrito al montar el componente
     useEffect(() => {
         const savedCart = loadCartFromStorage();
         if (savedCart.items && savedCart.items.length > 0) {
@@ -132,19 +129,17 @@ export const CartProvider = ({ children }) => {
     };
 
     const getCartTotal = () => {
-        // Asegurarnos de que items siempre sea un array
         const items = state.items || [];
         return items.reduce((total, item) => total + (item.price * item.quantity), 0);
     };
 
     const getCartItemsCount = () => {
-        // Asegurarnos de que items siempre sea un array
         const items = state.items || [];
         return items.reduce((count, item) => count + item.quantity, 0);
     };
 
     const value = {
-        items: state.items || [], // Siempre devolver array
+        items: state.items || [], 
         addToCart,
         removeFromCart,
         updateQuantity,

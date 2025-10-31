@@ -31,14 +31,12 @@ export const authService = {
             const payload = JSON.parse(atob(token.split('.')[1]));
             console.log('🔐 Token payload completo:', payload);
             
-            // Usar los nombres de campos correctos según el backend
-            // Del token vimos: userId, userEmail, role
             return {
-                id: payload.userId || payload.id,           // ← userId del token
-                email: payload.userEmail || payload.email,  // ← userEmail del token  
-                name: payload.name || 'Administrador',      // ← name puede no venir
-                lastName: payload.lastName || '',           // ← lastName puede no venir
-                role: payload.role                          // ← role sí viene
+                id: payload.userId || payload.id,           
+                email: payload.userEmail || payload.email,   
+                name: payload.name || 'Administrador',      
+                lastName: payload.lastName || '',         
+                role: payload.role                       
             };
             
         } catch (error) {

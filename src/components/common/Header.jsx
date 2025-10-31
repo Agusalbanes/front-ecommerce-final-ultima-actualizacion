@@ -10,7 +10,7 @@ const Header = () => {
     const { getCartItemsCount } = useCart();
     const { user, logout, isAdmin } = useAuth();
 
-    // Manejo seguro del contador
+
     const cartItemsCount = getCartItemsCount ? getCartItemsCount() : 0;
 
     const handleLogout = () => {
@@ -18,7 +18,6 @@ const Header = () => {
         setIsMenuOpen(false);
     };
 
-    // Función para mostrar nombre completo o solo nombre si no hay apellido
     const getUserDisplayName = () => {
         if (user?.lastName) {
             return `${user.name} ${user.lastName}`;
@@ -29,21 +28,17 @@ const Header = () => {
     return (
         <header className="header">
             <div className="header-container">
-                {/* Logo */}
                 <Link to="/" className="logo">
                     <h1>Crea Recuerdos</h1>
                 </Link>
 
-                {/* Navegación Desktop */}
                 <nav className="nav-desktop">
                     <Link to="/products">Productos</Link>
                    {/*  <Link to="/categories">Categorías</Link> */}
                     <Link to="/about">Nosotros</Link>
                 </nav>
 
-                {/* Iconos de usuario/carrito */}
                 <div className="header-actions">
-                    {/* Carrito con contador */}
                     <Link to="/cart" className="cart-icon">
                         <FaCartShopping />
                         {cartItemsCount > 0 && (
@@ -51,12 +46,10 @@ const Header = () => {
                         )}
                     </Link>
 
-                    {/* Usuario */}
                     {user ? (
                         <div className="user-menu">
                             <span className="user-greeting">Hola, {getUserDisplayName()}</span>
                             
-                            {/* BOTÓN PANEL ADMIN - Solo visible para admins */}
                             {isAdmin && (
                                 <Link to="/admin" className="admin-panel-btn">
                                     Panel Admin
@@ -71,7 +64,6 @@ const Header = () => {
                         <Link to="/login" className="user-icon">👤</Link>
                     )}
 
-                    {/* Menú hamburguesa móvil */}
                     <button
                         className="menu-toggle"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -80,7 +72,6 @@ const Header = () => {
                     </button>
                 </div>
 
-                {/* Menú móvil */}
                 <div className={`nav-mobile ${isMenuOpen ? 'active' : ''}`}>
                     <Link to="/products" onClick={() => setIsMenuOpen(false)}>Productos</Link>
                     {/* <Link to="/categories" onClick={() => setIsMenuOpen(false)}>Categorías</Link> */}
@@ -90,7 +81,6 @@ const Header = () => {
                         <>
                             <span className="user-info">Hola, {getUserDisplayName()}</span>
                             
-                            {/* BOTÓN PANEL ADMIN MÓVIL - Solo visible para admins */}
                             {isAdmin && (
                                 <Link 
                                     to="/admin" 

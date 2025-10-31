@@ -1,4 +1,3 @@
-// pages/Cart/Cart.jsx
 import React from 'react';
 import { useCart } from '../../hooks/useCart.js';
 import { Link } from 'react-router-dom';

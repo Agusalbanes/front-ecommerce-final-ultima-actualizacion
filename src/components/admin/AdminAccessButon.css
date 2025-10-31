@@ -22,7 +22,6 @@
     text-decoration: none;
 }
 
-/* Para usar como botón en lugar de Link */
 .admin-access-btn.as-button {
     background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
     box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);

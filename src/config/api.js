@@ -53,7 +53,7 @@ api.interceptors.request.use(
     }
 );
 
-// Interceptor para manejar errores globalmente - CON DEBUG DETALLADO
+// Interceptor para manejar errores globalmente 
 api.interceptors.response.use(
     (response) => {
         console.log('✅ Response interceptor - Status:', response.status, 'URL:', response.config.url);

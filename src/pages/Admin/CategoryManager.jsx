@@ -69,7 +69,6 @@ const CategoryManager = () => {
     <div className="category-manager">
       <h2>Gestión de Categorías</h2>
 
-      {/* Información de debug */}
       <div style={{ background: '#f0f0f0', padding: '10px', borderRadius: '5px', marginBottom: '15px' }}>
         <strong>Debug:</strong> {debugInfo}
       </div>

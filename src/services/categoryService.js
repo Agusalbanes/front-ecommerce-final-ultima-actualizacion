@@ -5,7 +5,6 @@ export const categoryService = {
     getCategories: async () => {
         try {
             const response = await api.get(API_CONFIG.CATEGORY.GET_ALL);
-            // Acceder correctamente a las categorías según la estructura del backend
             return response.data.data || [];
         } catch (error) {
             console.error('❌ Error cargando categorías:', error);

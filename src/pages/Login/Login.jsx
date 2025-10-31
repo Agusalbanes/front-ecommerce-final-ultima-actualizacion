@@ -1,4 +1,3 @@
-// pages/Login/Login.jsx
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
@@ -16,16 +15,15 @@ const Login = () => {
   });
   const [formErrors, setFormErrors] = useState({});
   const [message, setMessage] = useState({ text: '', type: '' });
-  const [registrationSuccess, setRegistrationSuccess] = useState(false); // Nuevo estado
+  const [registrationSuccess, setRegistrationSuccess] = useState(false); 
   
   const { login, register, loading } = useAuth();
   const navigate = useNavigate();
 
-  // Limpiar mensajes cuando cambia el modo
   useEffect(() => {
     setMessage({ text: '', type: '' });
     setFormErrors({});
-    setRegistrationSuccess(false); // Resetear cuando cambia de modo
+    setRegistrationSuccess(false); 
   }, [isLogin]);
 
   const handleChange = (e) => {
@@ -34,7 +32,6 @@ const Login = () => {
       [e.target.name]: e.target.value
     }));
     
-    // Limpiar error del campo cuando el usuario escribe
     if (formErrors[e.target.name]) {
       setFormErrors(prev => ({
         ...prev,
@@ -111,24 +108,20 @@ const Login = () => {
       });
     }
 
-    // Mostrar mensaje directamente en el componente
     if (result.success) {
       setMessage({ 
         text: result.message || (isLogin ? '¡Login exitoso!' : '¡Registro exitoso!'), 
         type: 'success' 
       });
       
-      // Si es registro exitoso, deshabilitar el formulario
       if (!isLogin) {
         setRegistrationSuccess(true);
       }
-      
-      // Navegar después de 2 segundos para que se vea el mensaje
+
       setTimeout(() => {
         if (!result.needsLogin && isLogin) {
           navigate('/');
         }
-        // Si es registro y necesita login, quedarse en la página pero cambiar a modo login
         else if (result.needsLogin) {
           setIsLogin(true);
           setRegistrationSuccess(false);
@@ -142,14 +135,12 @@ const Login = () => {
     }
   };
 
-  // Determinar si el botón debe estar deshabilitado
   const isSubmitDisabled = () => {
     if (loading) return true;
     if (!isLogin && registrationSuccess) return true; // Deshabilitar después de registro exitoso
     return false;
   };
 
-  // Obtener texto del botón
   const getButtonText = () => {
     if (loading) return 'Cargando...';
     if (!isLogin && registrationSuccess) return '✅ Registro Exitoso';
@@ -162,7 +153,6 @@ const Login = () => {
         <div className="auth-card">
           <h1>{isLogin ? 'Iniciar Sesión' : 'Crear Cuenta'}</h1>
           
-          {/* Mostrar mensaje de éxito o error */}
           {message.text && (
             <div className={`message ${message.type}-message`}>
               {message.type === 'success' ? '✅' : '❌'} {message.text}
@@ -180,7 +170,7 @@ const Login = () => {
                     value={formData.name}
                     onChange={handleChange}
                     className={formErrors.name ? 'error' : ''}
-                    disabled={registrationSuccess} // Deshabilitar campos después de registro
+                    disabled={registrationSuccess} 
                   />
                   {formErrors.name && (
                     <span className="field-error">{formErrors.name}</span>
@@ -284,14 +274,13 @@ const Login = () => {
                 type="button"
                 onClick={() => setIsLogin(!isLogin)}
                 className="switch-button"
-                disabled={registrationSuccess} // Deshabilitar cambio de modo después de registro
+                disabled={registrationSuccess} 
               >
                 {isLogin ? 'Regístrate' : 'Inicia Sesión'}
               </button>
             </p>
           </div>
 
-          {/* Mensaje adicional después del registro exitoso */}
           {registrationSuccess && (
             <div className="success-message">
               <p>🎉 ¡Registro completado! Redirigiendo al login...</p>

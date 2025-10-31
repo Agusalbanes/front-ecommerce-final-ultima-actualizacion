@@ -20,9 +20,7 @@ export const productService = {
         try {
             console.log(`📤 GET ${API_CONFIG.PRODUCT.GET_ALL}`);
             const response = await api.get(API_CONFIG.PRODUCT.GET_ALL);
-            console.log('✅ Productos cargados:', response.data);
-            
-            // Ajustar según la estructura real del backend
+        
             if (response.data && Array.isArray(response.data.data)) {
                 return response.data.data;
             } else if (Array.isArray(response.data)) {
@@ -74,7 +72,6 @@ export const productService = {
         }
     },
 
-    // Métodos de admin
     createProduct: async (productData) => {
         try {
             console.log('📦 Creando producto:', productData);
